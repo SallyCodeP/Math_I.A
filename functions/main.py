@@ -16,5 +16,5 @@ class lineDataset:
 
 
 func = lambda x: x*3 + 2
-abc = lineDataset(3, [-6, 6], func)
+abc = lineDataset(7, [-6, 6], func)
 print(abc.final)
