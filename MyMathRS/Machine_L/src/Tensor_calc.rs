@@ -6,7 +6,7 @@ pub fn tensor_multi(x1: &Vec<f64>, x2: &Vec<f64>) -> Vec<f64>{
     return f_return;
 }
 
-pub fn tensor_elevate(x1: &Vec<f64>, elevate: f64) -> &Vec<f64> {
+pub fn tensor_elevate(x1: &Vec<f64>, elevate: f64) -> Vec<f64> {
     let f_return: Vec<f64> = vec![];
     for e in x1.iter() {
         f_return.push(e.powf(elevate))
@@ -57,4 +57,12 @@ pub fn tensor_sum_all(data: &Vec<f64>) -> f64 {
         soma += elements;
     }
     return soma;
+}
+
+pub fn tensor_mul_all(x: &Vec<f64>, num: f64) -> Vec<f64> {
+    let to_final = vec![];
+    for element in x.iter() {
+        to_final.push(element*num);
+    }
+    return to_final;
 }
