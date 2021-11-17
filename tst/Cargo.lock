@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "MyMathRs"
+name = "tst"
 version = "0.1.0"
