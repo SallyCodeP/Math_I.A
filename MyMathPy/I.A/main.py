@@ -24,8 +24,22 @@ def grad(x, y, y_pred):
     # e depois pegando a media dos valores
     return np.dot(2*x, y_pred - y).mean()
 
-rate = 0.001
+
 repeticao = 800
+
+def get_rate(repeat):
+    if repeat > 0:
+        num = len(str(repeat)) - 1
+        final = ["0" for _ in range(num)]
+        final.append("1")
+        final = "".join(final)
+        return float(f"0.{final}")
+    else:
+        print("Value error")
+
+print("rate")
+rate = get_rate(repeticao)
+print(rate)
 
 for aprender in range(repeticao):
     y_pred = foward(x)
