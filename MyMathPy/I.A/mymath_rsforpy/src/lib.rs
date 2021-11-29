@@ -1,3 +1,6 @@
+extern crate cpython;
+use cpython::{Python, PyResult};
+
 
 
 mod mymath {

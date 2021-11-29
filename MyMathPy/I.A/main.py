@@ -1,4 +1,5 @@
-import numpy as np 
+import numpy as np
+import matplotlib.pyplot as plt
 
 def function(x):
     return float(x*2)
@@ -14,7 +15,11 @@ w = 0.0
 def foward(x):
     return x*w
 
+print("Resultado inicial:")
+print("-=" * 30)
 print(foward(14))
+print("-=" * 30)
+
 
 def loss(y, y_pred):
     return ((y_pred - y)**2).mean()
@@ -25,7 +30,8 @@ def grad(x, y, y_pred):
     return np.dot(2*x, y_pred - y).mean()
 
 
-repeticao = 800
+
+repeticao = 50
 
 def get_rate(repeat):
     if repeat > 0:
@@ -36,15 +42,24 @@ def get_rate(repeat):
         return float(f"0.{final}")
     else:
         print("Value error")
-
-print("rate")
+        
 rate = get_rate(repeticao)
-print(rate)
 
 for aprender in range(repeticao):
     y_pred = foward(x)
     l = loss(y, y_pred)
     wd = grad(x, y, y_pred)
+    print(f"Resultado loss {l}, resultado w*x {y_pred}")
     w -= wd * rate
 
+
+
+print("-=" * 30)
+print("Resultado final:")
 print(f"{foward(14):.3f}")
+
+m = [w*a for a in x]
+
+plt.plot(x, y, "ro")
+# plt.plot(X, pre, "b")
+plt.show()
