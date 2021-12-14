@@ -6,10 +6,3 @@ edition = "2018"
 [dependencies]
 
 
-[lib]
-name = "mymath"
-crate-type = ["dylib"]
-
-[dependencies.cpython]
-version = "0.1"
-features = ["extension-module"]
